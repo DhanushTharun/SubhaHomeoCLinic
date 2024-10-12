@@ -24,10 +24,10 @@
         </div>
         <div class="relative z-10 ml-[-130px] mt-[-31px]">
             <ul class="ml-[1040px] mt-[-20px] text-white flex gap-[50px]">
-                <li class="hover:text-gray-300 transition-colors"><button>About</button></li>
-                <li class="hover:text-gray-300 transition-colors"><button>Treatments</button></li>
-                <li class="hover:text-gray-300 transition-colors"><button>Testimonals</button></li>
-                <li class="hover:text-gray-300 transition-colors"><button>Contact</button></li>
+                <li class="hover:text-gray-300 transition-colors" href="#about"><button onclick="scrollToSection('about-section')">About</button></li>
+                <li class="hover:text-gray-300 transition-colors" href="#treatment"><button onclick="scrollToSection('treatment-section')">Treatments</button></li>
+                <li class="hover:text-gray-300 transition-colors" href="#testimonal"><button  onclick="scrollToSection('testimonial-section')">Testimonals</button></li>
+                <li class="hover:text-gray-300 transition-colors" href="#contact"><button onclick="scrollToSection('contact-section')">Contact</button></li>
             </ul>
         </div>
 
@@ -45,27 +45,33 @@
    
         <div id="appointment-form" class="hidden fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50">
             <div class="bg-white rounded-lg shadow-lg p-6 max-w-md w-full overflow-y-auto" style="max-height: 80%;">
-                <form>
+                <form action="https://api.web3forms.com/submit" method="POST" action="https://script.google.com/macros/s/AKfycbw7r--of74c66wH76hnZp2mptY0Ab7meNaQpdw1-9HX4Tr5yPaABSFaGgr3Pu393jrq1A/exec">
+                    <input type="hidden" name="access_key" value="2893df36-6da8-454d-a129-c3c40e7f14c6">
+                
                     <div class="mb-4">
                         <label for="name" class="block text-gray-700 font-semibold">Name</label>
-                        <input type="text" id="name" class="border border-gray-300 rounded-md w-full p-2" placeholder="Enter your name" required>
+                        <input type="text" id="name" name="name" class="border border-gray-300 rounded-md w-full p-2" placeholder="Enter your name" required>
                     </div>
+                
                     <div class="mb-4">
                         <label for="email" class="block text-gray-700 font-semibold">Email</label>
-                        <input type="email" id="email" class="border border-gray-300 rounded-md w-full p-2" placeholder="Enter your email" required>
+                        <input type="email" id="email" name="email" class="border border-gray-300 rounded-md w-full p-2" placeholder="Enter your email" required>
                     </div>
+                
                     <div class="mb-4">
                         <label for="phone" class="block text-gray-700 font-semibold">Phone (India)</label>
-                        <input type="tel" id="phone" class="border border-gray-300 rounded-md w-full p-2" placeholder="Enter your phone number" pattern="^[6-9]\d{9}$" title="Please enter a valid Indian phone number" required>
+                        <input type="tel" id="phone" name="phone" class="border border-gray-300 rounded-md w-full p-2" placeholder="Enter your phone number" pattern="^[6-9]\d{9}$" title="Please enter a valid Indian phone number" required>
                     </div>
+                
                     <div class="mb-4">
                         <label for="sex" class="block text-gray-700 font-semibold">Sex</label>
-                        <select id="sex" class="border border-gray-300 rounded-md w-full p-2" required>
+                        <select id="sex" name="sex" class="border border-gray-300 rounded-md w-full p-2" required>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                             <option value="others">Others</option>
                         </select>
                     </div>
+                
                     <div class="mb-4">
                         <label for="facility" class="block text-gray-700 font-semibold">Have you recently attended our facility?</label>
                         <div class="flex items-center">
@@ -77,32 +83,24 @@
                             </label>
                         </div>
                     </div>
+                
                     <div class="mb-4">
                         <label for="timeslot" class="block text-gray-700 font-semibold">Preferred Time Slot</label>
-                        <select id="timeslot" class="border border-gray-300 rounded-md w-full p-2" required>
+                        <select id="timeslot" name="timeslot" class="border border-gray-300 rounded-md w-full p-2" required>
                             <option value="sun_morning">Sun 10:00 - 13:00</option>
                             <option value="mon_morning">Mon 10:00 - 13:00</option>
                             <option value="tue_morning">Tue 10:00 - 13:00</option>
                             <option value="tue_evening">Tue 17:00 - 21:00</option>
-                            <option value="wed_morning">Wed 10:00 - 13:00</option>
-                            <option value="wed_evening">Wed 17:00 - 21:00</option>
-                            <option value="thurs_morning">Thurs 10:00 - 13:00</option>
-                            <option value="thurs_evening">Thurs 17:00 - 21:00</option>
-                            <option value="fri_morning">Fri 10:00 - 13:00</option>
-                            <option value="fri_evening">Fri 17:00 - 21:00</option>
-                            <option value="sat_morning">Sat 10:00 - 13:00</option>
+                            <!-- Add other time slots here -->
                         </select>
                     </div>
+                
                     <div class="mb-4">
                         <label for="date" class="block text-gray-700 font-semibold">Preferred Date</label>
-                        <input type="date" id="date" class="border border-gray-300 rounded-md w-full p-2" required>
+                        <input type="date" id="date" name="date" class="border border-gray-300 rounded-md w-full p-2" required>
                     </div>
+                
                     <button type="submit" class="bg-green-500 text-white py-2 px-4 rounded-lg w-full">Submit</button>
-                    
-                    <div id="appointment-form">
-
-                    <button id="close-btn" type="button" class="mt-4 text-gray-500 underline block text-center">Close</button>
-                    </div>
                 </form>
             </div>
         </div>
@@ -112,6 +110,7 @@
 
 
     </div>
+    <section id="about-section">
     <div>
         <div class="flex h-screen mt-[410px]">
             <!-- Image Container -->
@@ -134,9 +133,10 @@
             </div>
         </div>
     </div>
+    </section>
 
 
-
+    <section id="treatment-section">
     <div class="text-center mt-[100px]">
         <h1  class="text-3xl text-green-700 font-semibold mb-8">Our Best Services for your Health</h1>
     </div>
@@ -198,7 +198,8 @@
         &#x276F; <!-- Right Arrow -->
     </button>
 </div>
-
+</section>
+    <section id="testimonial-section">
     <div class="bg-white flex items-center justify-center h-screen mt-[-150px]">
         <div class="text-center">
             <h1 class="text-3xl text-green-700 font-semibold mb-8">Testimonials</h1>
@@ -225,73 +226,76 @@
             </div>
         </div>
     </div>
+</section>
     <div class="bg-gray-100">
         <!-- Navbar and other content -->
 
 
 
 
-    
-    
-<footer class="bg-teal-500 text-white py-8">
-  <div class="container mx-auto flex flex-col lg:flex-row justify-between items-center lg:items-start space-y-6 lg:space-y-0">
-    
-    <!-- Left Section (Logo + Social Icons) -->
-    <div class="flex flex-col items-center lg:items-start space-y-4">
-      <!-- Logo -->
-      <img class="w-[80px] h-[100px]" src="assests/logo1.png" alt="Logo" class="w-16 h-16">
-      
-      <!-- Social Icons -->
-      <div class="flex space-x-4">
-        <a href="#" class="hover:text-gray-400"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="hover:text-gray-400"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="hover:text-gray-400"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="hover:text-gray-400"><i class="fab fa-linkedin"></i></a>
-      </div>
-    </div>
+    <section id="contact-section">
+        <footer class="bg-green-500 text-white py-8">
+            <div class="container mx-auto flex flex-col lg:flex-row justify-between items-start space-y-6 lg:space-y-0">
+              
+              <!-- Left Section (Logo + Social Icons) -->
+              <div class="flex flex-col items-center lg:items-start space-y-4">
+                <!-- Logo -->
+                <img class="w-[80px] h-[100px]" src="assests/logo1.png" alt="Logo">
+                
+                <!-- Social Icons -->
+                <div class="flex space-x-4 mt-2">
+                  <a href="#" class="hover:text-gray-300 text-2xl"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="hover:text-gray-300 text-2xl"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="hover:text-gray-300 text-2xl"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="hover:text-gray-300 text-2xl"><i class="fab fa-linkedin"></i></a>
+                </div>
+              </div>
+          
+              <!-- Corporate Address Section -->
+              <div class="text-center lg:text-left space-y-2">
+                <h4 class="text-lg font-semibold">Corporate Address</h4>
+                <p>S.P. Road, Begumpet, Hyderabad, Telangana, India</p>
+                <p>E: <a href="mailto:online@homeocare.in" class="text-yellow-200 hover:underline">online@homeocare.in</a></p>
+                <p>P: 8977540651</p>
+              </div>
+          
+              <!-- Working Time Section -->
+              <div class="text-center lg:text-left space-y-2">
+                <h4 class="text-lg font-semibold">Working Time</h4>
+                <p>Monday - 9:00 AM - 7:00 PM</p>
+                <p>Tuesday - 9:00 AM - 7:00 PM</p>
+                <p>Wednesday - 9:00 AM - 7:00 PM</p>
+                <p>Thursday - 9:00 AM - 7:00 PM</p>
+                <p>Friday - 9:00 AM - 7:00 PM</p>
+                <p>Saturday - 9:00 AM - 7:00 PM</p>
+                <p>Sunday - 9:00 AM - 7:00 PM</p>
+              </div>
+          
+              <!-- Toll-Free Number Section -->
+              <div class="text-center lg:text-left space-y-2">
+                <h4 class="text-lg font-semibold">Toll Free Number</h4>
+                <p class="text-2xl font-bold text-yellow-300">1800 4123 1383</p>
+                <p>Existing Patients Queries and Follow Up:</p>
+                <p class="text-yellow-200"><i class="fas fa-phone-alt"></i> 8985714250 (8AM to 10PM)</p>
+              </div>
+              
+            </div>
+          
+            <!-- Bottom Section (WhatsApp Icon + Copyright) -->
+            <div class="container mx-auto flex justify-between items-center mt-8 border-t border-gray-600 pt-4">
+              <!-- WhatsApp Icon -->
+              <a href="#" class="text-white text-3xl"><i class="fab fa-whatsapp"></i></a>
+          
+              <!-- Copyright Text -->
+              <p class="text-sm">&copy; 2021 <span class="font-semibold">Homeocare International</span>. All Rights Reserved</p>
+          
+              <!-- Chat Icon -->
+              <a href="#" class="text-white text-3xl"><i class="fas fa-comment-alt"></i></a>
+            </div>
+          </footer>
+        </section>
 
-    <!-- Corporate Address Section -->
-    <div class="text-center lg:text-left space-y-2">
-      <h4 class="text-lg font-semibold">Corporate Address</h4>
-      <p>S.P. Road, Begumpet, Hyderabad, Telangana, India</p>
-      <p>E: <a href="mailto:online@homeocare.in" class="text-blue-400 hover:underline">online@homeocare.in</a></p>
-      <p>P: 8977540651</p>
-    </div>
-
-    <!-- Working Time Section -->
-    <div class="text-center lg:text-left space-y-2">
-      <h4 class="text-lg font-semibold">Working Time</h4>
-      <p>Monday - 9:00 AM - 7:00 PM</p>
-      <p>Tuesday - 9:00 AM - 7:00 PM</p>
-      <p>Wednesday - 9:00 AM - 7:00 PM</p>
-      <p>Thursday - 9:00 AM - 7:00 PM</p>
-      <p>Friday - 9:00 AM - 7:00 PM</p>
-      <p>Saturday - 9:00 AM - 7:00 PM</p>
-      <p>Sunday - 9:00 AM - 7:00 PM</p>
-    </div>
-
-    <!-- Toll-Free Number Section -->
-    <div class="text-center lg:text-left space-y-2">
-      <h4 class="text-lg font-semibold">Toll Free Number</h4>
-      <p class="text-2xl text-green-400 font-bold">1800 4123 1383</p>
-      <p>Existing Patients Queries and Follow Up:</p>
-      <p class="text-green-300"><i class="fas fa-phone-alt"></i> 8985714250 (8AM to 10PM)</p>
-    </div>
-    
-  </div>
-
-  <!-- Bottom Section (WhatsApp Icon + Copyright) -->
-  <div class="container mx-auto flex justify-between items-center mt-8 border-t border-gray-600 pt-4">
-    <!-- WhatsApp Icon -->
-    <a href="#" class="text-green-500 text-3xl"><i class="fab fa-whatsapp"></i></a>
-
-    <!-- Copyright Text -->
-    <p class="text-sm">&copy; 2021 <span class="font-semibold">Homeocare International</span>. All Rights Reserved</p>
-
-    <!-- Chat Icon -->
-    <a href="#" class="text-purple-500 text-3xl"><i class="fas fa-comment-alt"></i></a>
-  </div>
-</footer>
+          <script src="Google Sheet.js"></script>
     
 </body>
 
@@ -440,4 +444,11 @@ document.getElementById('contact-form').addEventListener('submit', async functio
 
 
 </script>
+
+
+<script>
+    function scrollToSection(sectionId) {
+        document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+    }
+    </script>
 </html>
