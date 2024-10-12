@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div >
+        <div id="bg">
+            <div id="overlay" class="bg-black w-full h-[650px] opacity-40">
+
+            </div>
+
+        </div>
+        <div>
+        <div class="w-[80px] h-[100px] ml-[30px] mt-[-645px] relative">
+            <img  src="assests/logo1.png" alt="logo">
+
+        </div>
+        <div class="title relative z-10 ml-[150px] mt-[-75px]">
+            <h1 class="text-white text-4xl font-bold">SUBHA HOMEO CLINIC</h1>
+        </div>
+        <div class="relative z-10 ml-[-130px] mt-[-31px]">
+            <ul class="ml-[1040px] mt-[-20px] text-white flex gap-[50px]">
+                <li class="hover:text-gray-300 transition-colors"><button>About</button></li>
+                <li class="hover:text-gray-300 transition-colors"><button>Treatments</button></li>
+                <li class="hover:text-gray-300 transition-colors"><button>Testimonals</button></li>
+                <li class="hover:text-gray-300 transition-colors"><button>Contact</button></li>
+            </ul>
+        </div>
+
+        <div class="text-white relative z-10 ml-[150px] leading-[25px] mt-[150px]">
+            <h1 class="text-[35px] ">Embrace Natural</h1><br>
+            <h1 class="text-[35px] ">Healing with Homeopathy</h1>
+            <h1 class="mt-[20px] text-gray-400">Gentle,Effective,Holistic,Care for a Healthier You</h1>
+        </div>
+        <div class="text-white relative z-10    mt-[45px] ml-[150px]">
+            <button id="appointment-btn"  class=" bg-[#93D609] rounded-[20px] text-[15px] p-[10px] ">Make Appointment</button>
+        </div>
+
+        </div>
+        <!-- Hidden Appointment Form -->
+   
+        <div id="appointment-form" class="hidden fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50">
+            <div class="bg-white rounded-lg shadow-lg p-6 max-w-md w-full overflow-y-auto" style="max-height: 80%;">
+                <form>
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 font-semibold">Name</label>
+                        <input type="text" id="name" class="border border-gray-300 rounded-md w-full p-2" placeholder="Enter your name" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 font-semibold">Email</label>
+                        <input type="email" id="email" class="border border-gray-300 rounded-md w-full p-2" placeholder="Enter your email" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="phone" class="block text-gray-700 font-semibold">Phone (India)</label>
+                        <input type="tel" id="phone" class="border border-gray-300 rounded-md w-full p-2" placeholder="Enter your phone number" pattern="^[6-9]\d{9}$" title="Please enter a valid Indian phone number" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="sex" class="block text-gray-700 font-semibold">Sex</label>
+                        <select id="sex" class="border border-gray-300 rounded-md w-full p-2" required>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="others">Others</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label for="facility" class="block text-gray-700 font-semibold">Have you recently attended our facility?</label>
+                        <div class="flex items-center">
+                            <label class="mr-4">
+                                <input type="radio" name="facility" value="yes" class="mr-2" required> Yes
+                            </label>
+                            <label>
+                                <input type="radio" name="facility" value="no" class="mr-2" required> No
+                            </label>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="timeslot" class="block text-gray-700 font-semibold">Preferred Time Slot</label>
+                        <select id="timeslot" class="border border-gray-300 rounded-md w-full p-2" required>
+                            <option value="sun_morning">Sun 10:00 - 13:00</option>
+                            <option value="mon_morning">Mon 10:00 - 13:00</option>
+                            <option value="tue_morning">Tue 10:00 - 13:00</option>
+                            <option value="tue_evening">Tue 17:00 - 21:00</option>
+                            <option value="wed_morning">Wed 10:00 - 13:00</option>
+                            <option value="wed_evening">Wed 17:00 - 21:00</option>
+                            <option value="thurs_morning">Thurs 10:00 - 13:00</option>
+                            <option value="thurs_evening">Thurs 17:00 - 21:00</option>
+                            <option value="fri_morning">Fri 10:00 - 13:00</option>
+                            <option value="fri_evening">Fri 17:00 - 21:00</option>
+                            <option value="sat_morning">Sat 10:00 - 13:00</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label for="date" class="block text-gray-700 font-semibold">Preferred Date</label>
+                        <input type="date" id="date" class="border border-gray-300 rounded-md w-full p-2" required>
+                    </div>
+                    <button type="submit" class="bg-green-500 text-white py-2 px-4 rounded-lg w-full">Submit</button>
+                    
+                    <div id="appointment-form">
+
+                    <button id="close-btn" type="button" class="mt-4 text-gray-500 underline block text-center">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+    <div>
+        <div class="flex h-screen mt-[410px]">
+            <!-- Image Container -->
+            <div class="basis-1/2 flex justify-center mt-[-120px] items-center">
+                <img class="w-[90%] h-[700px] rounded-[10px]" src="assests/dr.png" alt="doctor">
+            </div>
+            <!-- Content Container -->
+            <div class="basis-1/2 p-[50px] mt-[-120px]">
+                <p class="text-[#57751A] text-[18px] mb-[20px]">Let me Introduce,</p>
+                <p class="text-black text-[24px] font-bold mb-[20px]">
+                    Dr. S. SUBHA LAKSHMI, B.H.M.S, MBA(HM), MCGO
+                </p>
+                <p class="text-[16px] leading-[1.7] text-gray-700">
+                    Dr. S. Subha Lakshmi is a distinguished Homeopathic Consultant and Women's Health Specialist, renowned for her dedication to providing natural and holistic healthcare solutions. With a B.H.M.S (Bachelor of Homeopathic Medicine and Surgery), an MBA in Hospital Management, and an MCGO (Master in Clinical Gynecology and Obstetrics), Dr. Subha Lakshmi integrates her comprehensive knowledge and experience to offer exceptional patient care.
+                    <br><br>
+                    Dr. Subha Lakshmi specializes in treating a wide range of health issues with a particular focus on women's health and chronic conditions. Her approach is centered on personalized treatment plans that cater to the unique needs of each patient, promoting overall well-being through natural healing methods.
+                    <br><br>
+                    Committed to empowering patients through education and compassionate care, Dr. Subha Lakshmi aims to help individuals achieve optimal health and balance in their lives. Experience the transformative benefits of homeopathy with Dr. S. Subha Lakshmi, where every patient receives individualized attention and holistic care.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="text-center mt-[100px]">
+        <h1  class="text-3xl text-green-700 font-semibold mb-8">Our Best Services for your Health</h1>
+    </div>
+    <div class="relative w-[1200px] mx-auto mt-10">
+    <!-- Left Button -->
+    <button id="slide-left" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-green-500 text-white p-4 rounded-full z-10">
+        &#x276E; <!-- Left Arrow -->
+    </button>
+
+    <!-- Slider Container -->
+    <div class="slider-container w-full h-[400px] overflow-hidden">
+        <div id="slider" class="slider w-[1000%] flex">
+            <!-- Individual Slides -->
+            <div class="min-w-[10%] flex flex-col items-center">
+                <img src="assests/renal-stones&gll stones.png" alt="Renal stones & GII stones" class="w-64 h-56 object-contain mb-4">
+                <p class="text-lg font-semibold">Renal stones & GII stones</p>
+            </div>
+            <div class="min-w-[10%] flex flex-col items-center">
+                <img src="assests/piles and fissures.png" alt="plies" class="w-64 h-56 object-contain mb-4">
+                <p class="text-lg font-semibold">Piles, anal fissures</p>
+            </div>
+            <div class="min-w-[10%] flex flex-col items-center">
+                <img src="assests/tyroid-complaints.png" alt="thyroid" class="w-64 h-56 object-contain mb-4">
+                <p class="text-lg font-semibold">Thyroid complaints</p>
+            </div>
+            <div class="min-w-[10%] flex flex-col items-center">
+                <img src="assests/anemia.png" alt="anemia" class="w-64 h-56 object-contain mb-4">
+                <p class="text-lg font-semibold">Anemia</p>
+            </div>
+            <div class="min-w-[10%] flex flex-col items-center">
+                <img src="assests/diabetes&hypertension.png" alt="diabetes" class="w-64 h-56 object-contain mb-4">
+                <p class="text-lg font-semibold">Diabetes & Hypertension</p>
+            </div>
+            <div class="min-w-[10%] flex flex-col items-center">
+                <img src="assets/arthritis" alt="arthritis" class="w-64 h-56 object-contain mb-4">
+                <p class="text-lg font-semibold">Arthritis</p>
+            </div>
+            <div class="min-w-[10%] flex flex-col items-center">
+                <img src="assests/skinandhair.png" alt="skin" class="w-64 h-56 object-contain mb-4">
+                <p class="text-lg font-semibold">Skin and Hair Complaints</p>
+            </div>
+            <div class="min-w-[10%] flex flex-col items-center">
+                <img src="assests/psychiatric-complaints.png" alt="psychiatric" class="w-64 h-56 object-contain mb-4">
+                <p class="text-lg font-semibold">Psychiatric Complaints</p>
+            </div>
+            <div class="min-w-[10%] flex flex-col items-center">
+                <img src="assests/hypertension.png" alt="head" class="w-64 h-56 object-contain mb-4">
+                <p class="text-lg font-semibold">Head ache & Migraine</p>
+            </div>
+            <div class="min-w-[10%] flex flex-col items-center">
+                <img src="assests/" alt="infertility" class="w-64 h-56 object-contain mb-4">
+                <p class="text-lg font-semibold">Infertility</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Button -->
+    <button id="slide-right" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-green-500 text-white p-4 rounded-full z-10">
+        &#x276F; <!-- Right Arrow -->
+    </button>
+</div>
+
+    <div class="bg-white flex items-center justify-center h-screen mt-[-150px]">
+        <div class="text-center">
+            <h1 class="text-3xl text-green-700 font-semibold mb-8">Testimonials</h1>
+            <!-- Testimonials Slider Container -->
+            <div class="relative w-[1200px] mx-auto overflow-hidden"> <!-- Set overflow to hidden for smooth sliding -->
+                <div id="testimonial-slider" class="flex transition-all ease-in-out duration-500">
+                    <!-- Individual Testimonials -->
+                    <div class="min-w-[100%] p-8">
+                        <p class="text-lg">"Sadhana C, pt Id no JNRDY73, I am suffering from hormonal imbalance for a few years. After taking treatment feels gradual changes, happy with the treatment progress, thank you Homeocare International."</p>
+                        <h3 class="mt-4 font-bold">SADHANA C</h3>
+                        <p>Patient</p>
+                    </div>
+                    <div class="min-w-[100%] p-8">
+                        <p class="text-lg">"Hi, This is Harish, I have taken treatment for arthritis within one year. I have got good results from Homeocare International, good guidance from Dr. Mahendra Kumar, Thanks to Homeocare International for the speed results.ID: BGTDY74."</p>
+                        <h3 class="mt-4 font-bold">HARISH JV</h3>
+                        <p>Patient</p>
+                    </div>
+                    <div class="min-w-[100%] p-8">
+                        <p class="text-lg">"Mr. Rajashekar, MLMKF64, I'm taking medicine for diabetes, now up to 80% better, thanks to Homeocare International."</p>
+                        <h3 class="mt-4 font-bold">RAJSHEKAR A</h3>
+                        <p>Patient</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-gray-100">
+        <!-- Navbar and other content -->
+
+
+
+
+    
+    
+<footer class="bg-teal-500 text-white py-8">
+  <div class="container mx-auto flex flex-col lg:flex-row justify-between items-center lg:items-start space-y-6 lg:space-y-0">
+    
+    <!-- Left Section (Logo + Social Icons) -->
+    <div class="flex flex-col items-center lg:items-start space-y-4">
+      <!-- Logo -->
+      <img class="w-[80px] h-[100px]" src="assests/logo1.png" alt="Logo" class="w-16 h-16">
+      
+      <!-- Social Icons -->
+      <div class="flex space-x-4">
+        <a href="#" class="hover:text-gray-400"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="hover:text-gray-400"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="hover:text-gray-400"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="hover:text-gray-400"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+
+    <!-- Corporate Address Section -->
+    <div class="text-center lg:text-left space-y-2">
+      <h4 class="text-lg font-semibold">Corporate Address</h4>
+      <p>S.P. Road, Begumpet, Hyderabad, Telangana, India</p>
+      <p>E: <a href="mailto:online@homeocare.in" class="text-blue-400 hover:underline">online@homeocare.in</a></p>
+      <p>P: 8977540651</p>
+    </div>
+
+    <!-- Working Time Section -->
+    <div class="text-center lg:text-left space-y-2">
+      <h4 class="text-lg font-semibold">Working Time</h4>
+      <p>Monday - 9:00 AM - 7:00 PM</p>
+      <p>Tuesday - 9:00 AM - 7:00 PM</p>
+      <p>Wednesday - 9:00 AM - 7:00 PM</p>
+      <p>Thursday - 9:00 AM - 7:00 PM</p>
+      <p>Friday - 9:00 AM - 7:00 PM</p>
+      <p>Saturday - 9:00 AM - 7:00 PM</p>
+      <p>Sunday - 9:00 AM - 7:00 PM</p>
+    </div>
+
+    <!-- Toll-Free Number Section -->
+    <div class="text-center lg:text-left space-y-2">
+      <h4 class="text-lg font-semibold">Toll Free Number</h4>
+      <p class="text-2xl text-green-400 font-bold">1800 4123 1383</p>
+      <p>Existing Patients Queries and Follow Up:</p>
+      <p class="text-green-300"><i class="fas fa-phone-alt"></i> 8985714250 (8AM to 10PM)</p>
+    </div>
+    
+  </div>
+
+  <!-- Bottom Section (WhatsApp Icon + Copyright) -->
+  <div class="container mx-auto flex justify-between items-center mt-8 border-t border-gray-600 pt-4">
+    <!-- WhatsApp Icon -->
+    <a href="#" class="text-green-500 text-3xl"><i class="fab fa-whatsapp"></i></a>
+
+    <!-- Copyright Text -->
+    <p class="text-sm">&copy; 2021 <span class="font-semibold">Homeocare International</span>. All Rights Reserved</p>
+
+    <!-- Chat Icon -->
+    <a href="#" class="text-purple-500 text-3xl"><i class="fas fa-comment-alt"></i></a>
+  </div>
+</footer>
+    
+</body>
+
+<style>
+
+#bg {
+  background-image: url('assests/h1.png');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 650px;
+  
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust this for darker/lighter tone */
+  z-index: 1;
+}
+
+
+ /* Additional custom styles for the slider */
+ .slider-container {
+            overflow: hidden; /* Hide overflow for slider */
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out; /* Smooth transition */
+        }
+
+
+
+
+</style>
+
+
+<script>
+    
+    const appointmentBtn = document.getElementById('appointment-btn');
+const appointmentForm = document.getElementById('appointment-form');
+const closeBtn = document.getElementById('close-btn');
+
+// Open the form on button click
+appointmentBtn.addEventListener('click', function () {
+    appointmentForm.classList.toggle('hidden'); // Toggle visibility
+});
+
+// Close the form when close button is clicked
+closeBtn.addEventListener('click', function () {
+    appointmentForm.classList.add('hidden');
+});
+
+
+
+const slideLeftBtn = document.getElementById("slide-left");
+const slideRightBtn = document.getElementById("slide-right");
+const slider = document.getElementById("slider");
+let currentSlideIndex = 0; // Track the current slide index
+const slidesCount = slider.children.length; // Number of slides
+
+// Update the position of the slider based on the current slide index
+function updateSliderPosition() {
+    const slideWidth = slider.children[0].offsetWidth; // Get width of a single slide
+    const newTransform = `translateX(-${currentSlideIndex * slideWidth}px)`;
+    slider.style.transform = newTransform;
+}
+
+// Slide Left
+slideLeftBtn.addEventListener("click", () => {
+    if (currentSlideIndex > 0) {
+        currentSlideIndex--;
+        updateSliderPosition();
+    }
+});
+
+// Slide Right
+slideRightBtn.addEventListener("click", () => {
+    if (currentSlideIndex < slidesCount - 1) {
+        currentSlideIndex++;
+        updateSliderPosition();
+    }
+});
+
+// Auto sliding functionality for testimonials
+const testimonialSlider = document.getElementById('testimonial-slider');
+let testimonialIndex = 0;
+
+// Function to update testimonial slide
+function updateTestimonialSlider() {
+    testimonialSlider.style.transform = `translateX(-${testimonialIndex * 100}%)`;
+}
+
+// Auto-slide function
+function autoSlideTestimonials() {
+    const totalTestimonials = document.querySelectorAll('#testimonial-slider > div').length;
+    testimonialIndex = (testimonialIndex + 1) % totalTestimonials;
+    updateTestimonialSlider();
+}
+
+// Set interval for auto-sliding every 3 seconds
+setInterval(autoSlideTestimonials, 3000);
+
+
+
+document.getElementById('contact-form').addEventListener('submit', async function (e) {
+            e.preventDefault(); // Prevent default form submission
+
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                sex: document.getElementById('sex').value,
+                facility: document.querySelector('input[name="facility"]:checked').value,
+                timeslot: document.getElementById('timeslot').value,
+                date: document.getElementById('date').value,
+            };
+
+            try {
+                const response = await fetch('http://localhost:5000/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData),
+                });
+
+                if (response.ok) {
+                    alert('Form submitted successfully!');
+                    document.getElementById('contact-form').reset(); // Reset form after submission
+                } else {
+                    alert('Error submitting the form');
+                }
+            } catch (error) {
+                alert('Error: ' + error.message);
+            }
+        });
+
+
+        
+    
+
+
+
+</script>
+</html>
